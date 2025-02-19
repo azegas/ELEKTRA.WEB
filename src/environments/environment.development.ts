@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://localhost:7081',
+  apiUrl: 'https://elektraapi-hrbtenegexfkhjcs.polandcentral-01.azurewebsites.net',
 };
