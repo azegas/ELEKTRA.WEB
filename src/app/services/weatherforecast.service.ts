@@ -12,6 +12,7 @@ export class WeatherforecastService {
   private apiUrl = environment.apiUrl + '/weatherForecast';
 
   public get(): Observable<any> {
+    console.log('API URL:', this.apiUrl); // Log the API URL
     return this.http.get(this.apiUrl);
   }
 }
