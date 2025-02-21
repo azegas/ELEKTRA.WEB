@@ -10,11 +10,14 @@
 
 <h2>Weather Forecasts</h2>
 
-@for (weatherForecast of weatherForecasts; track $index) {
+@if (weatherForecasts.length > 0) { @for (weatherForecast of weatherForecasts;
+track $index) {
 <div>
   <div>Date: {{ weatherForecast.date }}</div>
   <div>Temperature (C): {{ weatherForecast.temperatureC }}</div>
   <div>Summary: {{ weatherForecast.summary }}</div>
 </div>
 <hr />
+} } @else {
+<div>Weather forecasts API did not return anything.</div>
 }
