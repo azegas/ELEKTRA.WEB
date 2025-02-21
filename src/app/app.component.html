@@ -1,5 +1,13 @@
 <h2>Testing the communication between Angular and ASP.NET Core</h2>
 
+<h2>Calculations</h2>
+
+<div>
+  <div>{{ calculations | json }}</div>
+</div>
+
+<h2>Weather Forecasts</h2>
+
 @for (weatherForecast of weatherForecasts; track $index) {
 <div>
   <div>Date: {{ weatherForecast.date }}</div>
