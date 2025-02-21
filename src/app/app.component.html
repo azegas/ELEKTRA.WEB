@@ -2,9 +2,11 @@
 
 <h2>Calculations</h2>
 
-<div>
-  <div>{{ calculations | json }}</div>
-</div>
+@if (calculations.length > 0) {
+<div>{{ calculations | json }}</div>
+} @else {
+<div>Calculations API did not return anything.</div>
+}
 
 <h2>Weather Forecasts</h2>
 
