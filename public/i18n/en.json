@@ -1,0 +1,7 @@
+{
+  "title": "Testing the communication between Angular and ASP.NET Core",
+  "calculations": "Calculations",
+  "calculations404": "Calculations API returned nothing",
+  "weatherForecast": "Weather Forecast",
+  "weatherForecast404": "Weather Forecast API returned nothing"
+}

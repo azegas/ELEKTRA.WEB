@@ -1,14 +1,17 @@
-<h2>Testing the communication between Angular and ASP.NET Core</h2>
+<h2>{{ "title" | translate }}</h2>
 
-<h2>Calculations</h2>
+<button (click)="useLanguage('en')">en</button>
+<button (click)="useLanguage('lt')">lt</button>
+
+<h2>{{ "calculations" | translate }}</h2>
 
 @if (calculations.length > 0) {
 <div>{{ calculations | json }}</div>
 } @else {
-<div>Calculations API did not return anything.</div>
+<div>{{ "calculations404" | translate }}</div>
 }
 
-<h2>Weather Forecasts</h2>
+<h2>{{ "weatherForecast" | translate }}</h2>
 
 @if (weatherForecasts.length > 0) { @for (weatherForecast of weatherForecasts;
 track $index) {
@@ -19,5 +22,5 @@ track $index) {
 </div>
 <hr />
 } } @else {
-<div>Weather forecasts API did not return anything.</div>
+<div>{{ "weatherForecast404" | translate }}</div>
 }

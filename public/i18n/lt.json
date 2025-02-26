@@ -1,0 +1,7 @@
+{
+  "title": "Testuojame ryšį tarp Angular ir ASP.NET Core",
+  "calculations": "Kalkuliacijos",
+  "calculations404": "Kalkuliaciju API nieko negrazino",
+  "weatherForecast": "Oru prognoze",
+  "weatherForecast404": "Oro prognoziu API nieko negrazino"
+}
