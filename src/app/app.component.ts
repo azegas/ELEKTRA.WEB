@@ -4,6 +4,8 @@ import { CalculationstService } from './services/calculations.service';
 import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { LoggerService } from './services/logger/logger.service';
+
 
 @Component({
   selector: 'app-root',
@@ -24,8 +26,14 @@ export class AppComponent {
   weatherForecastService = inject(WeatherforecastService);
   calculationstService = inject(CalculationstService);
 
-  constructor(private translate: TranslateService) {
-    console.log('ENV:', environment.env);
+  constructor(
+    private translate: TranslateService,
+    private logger: LoggerService
+  ) {
+    this.logger.debug('HELOOOOOOOOOOO: ' + environment.PRODUCTION);
+    this.logger.info('PRODUCTION: ' + environment.PRODUCTION);
+    this.logger.warn('LOG_LEVEL: ' + environment.LOG_LEVEL);
+    this.logger.error('ENV: ' + environment.env);
 
     this.translate.addLangs(['lt', 'en']);
     this.translate.setDefaultLang('en');
@@ -39,6 +47,10 @@ export class AppComponent {
     this.calculationstService.get().subscribe((calculations) => {
       this.calculations = calculations;
     });
+  }
+
+  ngOnInit() {
+    this.logger.info('AppComponent initialized');
   }
 
   useLanguage(language: string): void {
