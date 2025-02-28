@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { WeatherforecastService } from './services/weatherforecast.service';
 import { CalculationstService } from './services/calculations.service';
+import { WelcomeService } from './services/welcome.service';
 import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
@@ -22,9 +23,11 @@ export class AppComponent {
   // TODO add interfaces/types instead of any
   weatherForecasts: any[] = [];
   calculations: any[] = [];
+  welcome: string = '';
 
   weatherForecastService = inject(WeatherforecastService);
   calculationstService = inject(CalculationstService);
+  welcomeService = inject(WelcomeService);
 
   constructor(
     private translate: TranslateService,
@@ -46,6 +49,10 @@ export class AppComponent {
 
     this.calculationstService.get().subscribe((calculations) => {
       this.calculations = calculations;
+    });
+
+    this.welcomeService.get().subscribe((welcome) => {
+      this.welcome = welcome;
     });
   }
 
