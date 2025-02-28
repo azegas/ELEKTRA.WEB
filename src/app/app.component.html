@@ -3,6 +3,8 @@
 <button (click)="useLanguage('en')">en</button>
 <button (click)="useLanguage('lt')">lt</button>
 
+<button-demo></button-demo>
+
 <h2>{{ "welcome" | translate }}</h2>
 
 @if (welcome.length > 0) {
@@ -26,6 +28,9 @@
 } @else {
 <div>{{ "devices404" | translate }}</div>
 }
+
+<h2>Single Device</h2>
+<p>{{ singleDevice | json }}</p>
 
 <h2>{{ "weatherForecast" | translate }}</h2>
 

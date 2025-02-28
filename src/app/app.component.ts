@@ -22,10 +22,11 @@ import { ButtonDemo } from './components/button-demo.component';
 export class AppComponent {
   title = 'ELEKTRA.WEB';
 
-  // TODO add interfaces/types instead of any
+  // TODO add interfaces/types instead of any, use them in services also
   weatherForecasts: any[] = [];
   calculations: any[] = [];
   devices: any[] = [];
+  singleDevice: any = {};
   welcome: string = '';
 
   weatherForecastService = inject(WeatherforecastService);
@@ -59,6 +60,9 @@ export class AppComponent {
       this.devices = devices;
     });
 
+    this.devicesService.getSingle(1).subscribe((singleDevice) => {
+      this.singleDevice = singleDevice;
+    });
     this.welcomeService.get().subscribe((welcome) => {
       this.welcome = welcome;
     });
