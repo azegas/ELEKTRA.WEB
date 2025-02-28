@@ -5,15 +5,16 @@ import { WelcomeService } from './services/welcome.service';
 import { DevicesService } from './services/devices.service';
 import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LoggerService } from './services/logger/logger.service';
-
+import { ButtonDemo } from './components/button-demo.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule, // purely for json pipe in template (probably has more stuff in it)
     TranslateModule,
+    ButtonDemo
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
