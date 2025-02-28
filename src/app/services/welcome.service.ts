@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WelcomeService {
-  constructor() {}
-  private http = inject(HttpClient);
+  constructor(private http: HttpClient) {}
+
   private apiUrl = environment.apiUrl + '/welcome';
 
   public get(): Observable<any> {

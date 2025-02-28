@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WeatherforecastService {
-  constructor() {}
-  private http = inject(HttpClient);
+  constructor(private http: HttpClient) {}
+
   private apiUrl = environment.apiUrl + '/weatherForecast';
 
   public get(): Observable<any> {

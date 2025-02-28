@@ -10,11 +10,14 @@ import { Observable } from "rxjs";
 export class DevicesService {
   constructor(private http: HttpClient) {}
 
+  private apiUrl = environment.apiUrl + '/devices';
+
   get(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/devices');
+    return this.http.get(this.apiUrl);
   }
 
   getSingle(id: number): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/devices/${id}`);
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
   }
 }
