@@ -1,7 +1,11 @@
 {
   "title": "Testing the communication between Angular and ASP.NET Core",
-  "calculations": "Calculations",
+  "calculations": "Calculations Service",
   "calculations404": "Calculations API returned nothing",
-  "weatherForecast": "Weather Forecast",
+  "devices": "Devices Service",
+  "devices404": "Devices API returned nothing",
+  "welcome": "Welcome Service",
+  "welcome404": "Welcome API returned nothing",
+  "weatherForecast": "Weather Forecast Service",
   "weatherForecast404": "Weather Forecast API returned nothing"
 }

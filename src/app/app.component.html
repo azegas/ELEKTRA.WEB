@@ -3,8 +3,13 @@
 <button (click)="useLanguage('en')">en</button>
 <button (click)="useLanguage('lt')">lt</button>
 
-<h2>Welcome service</h2>
-<p>{{ welcome }}</p>
+<h2>{{ "welcome" | translate }}</h2>
+
+@if (welcome.length > 0) {
+<div>{{ welcome | json }}</div>
+} @else {
+<div>{{ "welcome404" | translate }}</div>
+}
 
 <h2>{{ "calculations" | translate }}</h2>
 
@@ -12,6 +17,14 @@
 <div>{{ calculations | json }}</div>
 } @else {
 <div>{{ "calculations404" | translate }}</div>
+}
+
+<h2>{{ "devices" | translate }}</h2>
+
+@if (devices.length > 0) {
+<div>{{ devices | json }}</div>
+} @else {
+<div>{{ "devices404" | translate }}</div>
 }
 
 <h2>{{ "weatherForecast" | translate }}</h2>

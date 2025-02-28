@@ -1,7 +1,11 @@
 {
   "title": "Testuojame ryšį tarp Angular ir ASP.NET Core",
-  "calculations": "Kalkuliacijos",
-  "calculations404": "Kalkuliaciju API nieko negrazino",
-  "weatherForecast": "Oru prognoze",
-  "weatherForecast404": "Oro prognoziu API nieko negrazino"
+  "calculations": "Kalkuliacijų Servisas",
+  "calculations404": "Kalkuliacijų API nieko negražino",
+  "devices": "Įrenginių Servisas",
+  "devices404": "Įrenginių API nieko negražino",
+  "welcome": "Sveikinimo Servisas",
+  "welcome404": "Sveikinimo API nieko negražino",
+  "weatherForecast": "Oru prognozės Servisas",
+  "weatherForecast404": "Oro prognozių API nieko negražino"
 }
