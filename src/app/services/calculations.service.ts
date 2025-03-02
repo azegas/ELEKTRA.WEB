@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CalculationstService {
-  constructor() {}
-  private http = inject(HttpClient);
+  constructor(private http: HttpClient) {}
+  
   private apiUrl = environment.apiUrl + '/calculations';
 
   public get(): Observable<any> {
