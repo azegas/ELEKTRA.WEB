@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../shared/button-component/button.component';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { FormsModule } from '@angular/forms';
@@ -9,15 +8,17 @@ import { WelcomeService } from '../../../services/welcome.service';
 import { DevicesService } from '../../../services/devices.service';
 import { environment } from '../../../../environments/environment';
 import { LoggerService } from '../../../services/logger/logger.service';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-services',
   imports: [
-    CommonModule, // purely for json pipe in template (probably has more stuff in it)
-    TranslateModule,
     ButtonComponent,
     FloatLabelModule,
+    TranslateModule,
+    CommonModule, // purely for json pipe in template (probably has more stuff in it)
     FormsModule, // to be able to use[(ngModel)] in html
   ],
   templateUrl: './services.component.html',
@@ -52,16 +53,12 @@ export class ServicesComponent {
   }
 
   constructor(
-    private translate: TranslateService,
     private logger: LoggerService
   ) {
     this.logger.debug('HELOOOOOOOOOOO: ' + environment.PRODUCTION);
     this.logger.info('PRODUCTION: ' + environment.PRODUCTION);
     this.logger.warn('LOG_LEVEL: ' + environment.LOG_LEVEL);
     this.logger.error('ENV: ' + environment.env);
-
-    this.translate.addLangs(['lt', 'en']);
-    this.translate.setDefaultLang('en');
 
     this.weatherForecastService.get().subscribe((weatherForecasts) => {
       // assigning a value from the web api to the property weatherForecasts that we have above
@@ -92,7 +89,5 @@ export class ServicesComponent {
     this.logger.info('AppComponent initialized');
   }
 
-  useLanguage(language: string): void {
-    this.translate.use(language);
-  }
+
 }
