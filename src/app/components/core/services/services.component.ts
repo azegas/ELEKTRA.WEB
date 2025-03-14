@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { ButtonComponent } from '../../shared/button-component/button.component';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { FormsModule } from '@angular/forms';
 import { WeatherforecastService } from '../../../services/weatherforecast.service';
@@ -10,12 +9,13 @@ import { environment } from '../../../../environments/environment';
 import { LoggerService } from '../../../services/logger/logger.service';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { ButtonModule } from 'primeng/button';
 
 
 @Component({
   selector: 'app-services',
   imports: [
-    ButtonComponent,
+    ButtonModule,
     FloatLabelModule,
     TranslateModule,
     CommonModule, // purely for json pipe in template (probably has more stuff in it)
@@ -88,6 +88,4 @@ export class ServicesComponent {
   ngOnInit() {
     this.logger.info('Services component initialized');
   }
-
-
 }
