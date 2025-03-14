@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [
-        TranslateModule,
-  ],
+  imports: [TranslateModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
@@ -17,4 +16,5 @@ export class HeaderComponent {
 
   useLanguage(language: string): void {
     this.translate.use(language);
-}}
+  }
+}

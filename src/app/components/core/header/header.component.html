@@ -1,5 +1,36 @@
 <div class="header">
   <p>header works!</p>
-  <button (click)="useLanguage('en')">en</button>
+
+  <a routerLink="/land" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NTILCS9cVuzbAqv-RI9Ij0ib6JDZP_tP6w&s"
+      alt=""
+      width="50"
+      height="50"
+    />
+  </a>
+
+  <button (click)="useLanguage('en')" routerLinkActive="active">en</button>
   <button (click)="useLanguage('lt')">lt</button>
+
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="/land"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Landing page</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/services"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Services</a
+        >
+      </li>
+    </ul>
+  </nav>
 </div>

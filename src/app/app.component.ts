@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { LandingPageComponent } from './components/core/landing-page/landing-page.component';
 import { HeaderComponent } from './components/core/header/header.component';
 import { FooterComponent } from './components/core/footer/footer.component';
-import { ServicesComponent } from './components/core/services/services.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [
-    LandingPageComponent,
     HeaderComponent,
     FooterComponent,
-    ServicesComponent,
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

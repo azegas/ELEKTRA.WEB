@@ -86,7 +86,7 @@ export class ServicesComponent {
   }
 
   ngOnInit() {
-    this.logger.info('AppComponent initialized');
+    this.logger.info('Services component initialized');
   }
 
 
