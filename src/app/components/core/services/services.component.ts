@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { FloatLabelModule } from 'primeng/floatlabel';
-import { FormsModule } from '@angular/forms';
 import { WeatherforecastService } from '../../../services/weatherforecast.service';
 import { CalculationstService } from '../../../services/calculations.service';
 import { WelcomeService } from '../../../services/welcome.service';
@@ -10,6 +9,7 @@ import { LoggerService } from '../../../services/logger/logger.service';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
+import { CalculationFormComponent } from '../calculation-form/calculation-form.component';
 
 
 @Component({
@@ -19,7 +19,7 @@ import { ButtonModule } from 'primeng/button';
     FloatLabelModule,
     TranslateModule,
     CommonModule, // purely for json pipe in template (probably has more stuff in it)
-    FormsModule, // to be able to use[(ngModel)] in html
+    CalculationFormComponent,
   ],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css',
@@ -32,29 +32,12 @@ export class ServicesComponent {
   singleDevice: any = {};
   welcome: string = '';
 
-  deviceName: string = '';
-  watts: string = '';
-
-  deviceToPost = {
-    deviceName: 'Device 1',
-    watt: 350,
-  };
-
   weatherForecastService = inject(WeatherforecastService);
   calculationstService = inject(CalculationstService);
   devicesService = inject(DevicesService);
   welcomeService = inject(WelcomeService);
 
-  setValue() {
-    this.logger.debug('deviceName: ' + this.deviceName);
-    this.logger.debug('watts: ' + this.watts);
-    // this.deviceName = 'Mikrobange';
-    // this.watts = '500';
-  }
-
-  constructor(
-    private logger: LoggerService
-  ) {
+  constructor(private logger: LoggerService) {
     this.logger.debug('HELOOOOOOOOOOO: ' + environment.PRODUCTION);
     this.logger.info('PRODUCTION: ' + environment.PRODUCTION);
     this.logger.warn('LOG_LEVEL: ' + environment.LOG_LEVEL);
