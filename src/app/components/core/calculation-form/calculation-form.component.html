@@ -1,5 +1,19 @@
 <div class="calculation-form">
-  <input id="username" pInputText [(ngModel)]="deviceName" />
-  <input id="username" pInputText [(ngModel)]="watts" />
-  <p-button (click)="setValue()" label="Set value" />
+  <div>
+    <label for="watts">Watts: </label>
+    <p-inputnumber
+      inputId="integeronly"
+      [(ngModel)]="user_watts"
+      (ngModelChange)="makeCalculations()"
+    />
+  </div>
+</div>
+
+<div class="results">
+  <p>kilowatts: - {{ kilowatts | number }}</p>
+  <p>Hourly cost: - {{ hourly_cost | currency : "EUR" }}</p>
+  <p>Daily cost: - {{ daily_cost | currency : "EUR" }}</p>
+  <p>Weekly cost: - {{ weekly_cost | currency : "EUR" }}</p>
+  <p>Monthly cost: - {{ monthly_cost | currency : "EUR" }}</p>
+  <p>Yearly cost: - {{ yearly_cost | currency : "EUR" }}</p>
 </div>

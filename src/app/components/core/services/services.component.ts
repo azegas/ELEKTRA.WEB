@@ -8,18 +8,14 @@ import { environment } from '../../../../environments/environment';
 import { LoggerService } from '../../../services/logger/logger.service';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { ButtonModule } from 'primeng/button';
-import { CalculationFormComponent } from '../calculation-form/calculation-form.component';
 
 
 @Component({
   selector: 'app-services',
   imports: [
-    ButtonModule,
     FloatLabelModule,
     TranslateModule,
     CommonModule, // purely for json pipe in template (probably has more stuff in it)
-    CalculationFormComponent,
   ],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css',
