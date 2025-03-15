@@ -1,0 +1,13 @@
+<div
+  class="calculation-card"
+  pTooltip="Kilowatts: {{ receivedCalculation?.kilowatts }}
+    Hourly cost: {{ receivedCalculation?.hourlyCost }}
+    Daily cost: {{ receivedCalculation?.dailyCost }}
+    Monthly cost: {{ receivedCalculation?.monthlyCost }}
+    Yearly cost: {{ receivedCalculation?.yearlyCost }}
+  "
+  tooltipPosition="right"
+>
+  <p>Device name: {{ receivedCalculation?.deviceName }}</p>
+  <p>Watts: {{ receivedCalculation?.watts }}</p>
+</div>

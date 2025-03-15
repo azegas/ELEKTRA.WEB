@@ -1,11 +1,27 @@
 <div class="calculation-form">
   <div>
+    <label for="deviceName">Device name: </label>
+    <input type="text" pInputText [(ngModel)]="device_name" />
+  </div>
+  <div>
     <label for="watts">Watts: </label>
     <p-inputnumber
       inputId="integeronly"
       [(ngModel)]="user_watts"
       (ngModelChange)="makeCalculations()"
     />
+  </div>
+  <div>
+    <label for="cost_per_kwh">Kilovatvalandes kaina: </label>
+    <p-inputNumber
+      inputId="cost_per_kwh"
+      [(ngModel)]="cost_per_kwh"
+      (ngModelChange)="makeCalculations()"
+      mode="currency"
+      inputId="currency-lithuania"
+      currency="EUR"
+      locale="lt-LT"
+    ></p-inputNumber>
   </div>
 </div>
 
@@ -18,8 +34,6 @@
   <p>Yearly cost: - {{ yearly_cost | currency : "EUR" }}</p>
 </div>
 
-<p-button label="Submit" (onClick)="alert()" />
+<p-button label="Save" (onClick)="saveCalculations()" />
 
-@if (show) {
 <app-calculations-list></app-calculations-list>
-}

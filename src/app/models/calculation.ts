@@ -1,5 +1,5 @@
 export interface Calculation {
-  id: number;
+  id?: number;
   deviceName: string;
   watts: number;
   kilowatts: number;

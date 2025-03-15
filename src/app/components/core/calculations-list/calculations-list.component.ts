@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CalculationCardComponent } from '../../components/calculation-card/calculation-card.component';
-import { CalculationsService } from '../../services/calculations.service';
-import { Calculation } from '../../models/calculation';
+import { CalculationCardComponent } from '../calculation-card/calculation-card.component';
+import { CalculationsService } from '../../../services/calculations.service';
+import { Calculation } from '../../../models/calculation';
 
 @Component({
   selector: 'app-calculations-list',

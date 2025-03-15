@@ -1,0 +1,7 @@
+.calculation-list {
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

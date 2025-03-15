@@ -1,0 +1,8 @@
+<div class="calculation-list">
+  <h2>Kalkuliacijos</h2>
+  @for (calculation of calculations; track $index) {
+  <app-calculation-card
+    [receivedCalculation]="calculation"
+  ></app-calculation-card>
+  }
+</div>
