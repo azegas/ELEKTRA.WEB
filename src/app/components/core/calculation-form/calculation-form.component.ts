@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LoggerService } from '../../../services/logger/logger.service';
 import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CommonModule } from '@angular/common';
+
+
 
 @Component({
   selector: 'app-calculation-form',
@@ -29,7 +31,8 @@ export class CalculationFormComponent {
     this.hourly_cost = kilowatts * this.cost_per_kwh;
   }
   calculateDailyCost(hourly_cost: number) {
-    this.daily_cost = hourly_cost * 24;50
+    this.daily_cost = hourly_cost * 24;
+    50;
   }
 
   calculateWeeklyCost(daily_cost: number) {
@@ -51,6 +54,10 @@ export class CalculationFormComponent {
     this.calculateWeeklyCost(this.daily_cost);
     this.calculateMonthlyCost(this.daily_cost);
     this.calculateYearlyCost(this.daily_cost);
+  }
+
+  alert() {
+    alert('Calculations have been made');
   }
 
   constructor(private logger: LoggerService) {}
