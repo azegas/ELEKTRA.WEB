@@ -5,8 +5,6 @@ import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CommonModule } from '@angular/common';
 import { CalculationsListComponent } from '../../calculations-list/calculations-list.component';
-import { CalculationsService } from '../../../services/calculations.service';
-import { Calculation } from '../../../models/calculation';
 
 @Component({
   selector: 'app-calculation-form',
@@ -21,11 +19,6 @@ import { Calculation } from '../../../models/calculation';
   styleUrl: './calculation-form.component.css',
 })
 export class CalculationFormComponent {
-  
-  calculationService = inject(CalculationsService);
-
-  calculations: Calculation[] = [];
-
   show = false;
 
   cost_per_kwh: number = 0.22;
@@ -71,9 +64,6 @@ export class CalculationFormComponent {
   }
 
   alert() {
-    this.calculationService.get().subscribe((data) => {
-      this.calculations = data;
-    });
     this.show = true;
   }
 
