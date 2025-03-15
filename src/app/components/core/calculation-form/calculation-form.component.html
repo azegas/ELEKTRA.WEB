@@ -19,3 +19,13 @@
 </div>
 
 <p-button label="Submit" (onClick)="alert()" />
+
+@if (show) {
+<app-calculations-list></app-calculations-list>
+
+@for (calculation of calculations; track $index) {
+<p>{{ calculation.id }}</p>
+<p>{{ calculation.deviceName }}</p>
+<p>{{ calculation.createdAt }}</p>
+
+} }

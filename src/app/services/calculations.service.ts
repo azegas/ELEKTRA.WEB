@@ -6,13 +6,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class CalculationstService {
+export class CalculationsService {
   constructor(private http: HttpClient) {}
   
   private apiUrl = environment.apiUrl + '/calculations';
 
   public get(): Observable<any> {
-    console.log('API URL:', this.apiUrl); // Log the API URL
     return this.http.get(this.apiUrl);
   }
 }
