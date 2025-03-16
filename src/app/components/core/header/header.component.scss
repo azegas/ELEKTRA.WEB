@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav {
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+
+      li {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+/* Ensure all links are black, regardless of visited state */
+a:link,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a.active {
+  color: red;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: underline; 
+}
+
+a:active {
+  color: red; /* Keep active color consistent with link color */
+}
+

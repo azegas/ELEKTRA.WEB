@@ -1,26 +1,42 @@
 <div class="header">
-  <p>header works!</p>
-
-  <a routerLink="/land" routerLinkActive="active" ariaCurrentWhenActive="page">
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NTILCS9cVuzbAqv-RI9Ij0ib6JDZP_tP6w&s"
-      alt=""
-      width="50"
-      height="50"
-    />
-  </a>
-
-  <button (click)="useLanguage('en')" routerLinkActive="active">en</button>
-  <button (click)="useLanguage('lt')">lt</button>
-
+  <div class="row">
+    <div class="left">
+      <a>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NTILCS9cVuzbAqv-RI9Ij0ib6JDZP_tP6w&s"
+          alt=""
+          width="50"
+          height="50"
+        />
+      </a>
+    </div>
+    <div class="right">
+      <button (click)="useLanguage('en')">en</button>
+      <button (click)="useLanguage('lt')">lt</button>
+    </div>
+  </div>
   <nav>
     <ul>
       <li>
         <a
-          routerLink="/land"
+          routerLink="/"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
+          [routerLinkActiveOptions]="{ exact: true }"
           >Landing page</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/calculation"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Calculation</a
+        >
+      </li>
+      <li>
+        <a routerLink="#" routerLinkActive="active" ariaCurrentWhenActive="page"
+          >random page</a
         >
       </li>
     </ul>
