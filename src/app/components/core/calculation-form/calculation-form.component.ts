@@ -8,7 +8,6 @@ import { CalculationsListComponent } from '../calculations-list/calculations-lis
 import { CalculationsService } from '../../../services/calculations.service';
 import { InputTextModule } from 'primeng/inputtext';
 
-
 @Component({
   selector: 'app-calculation-form',
   imports: [
@@ -37,27 +36,27 @@ export class CalculationFormComponent {
   yearly_cost: number = 0;
 
   calculateKilowatts(user_watts: number) {
-    this.kilowatts = user_watts / 1000;
+    this.kilowatts = parseFloat((user_watts / 1000).toFixed(2));
   }
 
   calculateHourlyCost(kilowatts: number) {
-    this.hourly_cost = kilowatts * this.cost_per_kwh;
+    this.hourly_cost = parseFloat((kilowatts * this.cost_per_kwh).toFixed(2));
   }
+
   calculateDailyCost(hourly_cost: number) {
-    this.daily_cost = hourly_cost * 24;
-    50;
+    this.daily_cost = parseFloat((hourly_cost * 24).toFixed(2));
   }
 
   calculateWeeklyCost(daily_cost: number) {
-    this.weekly_cost = daily_cost * 7;
+    this.weekly_cost = parseFloat((daily_cost * 7).toFixed(2));
   }
 
   calculateMonthlyCost(daily_cost: number) {
-    this.monthly_cost = daily_cost * 30;
+    this.monthly_cost = parseFloat((daily_cost * 30).toFixed(2));
   }
 
   calculateYearlyCost(daily_cost: number) {
-    this.yearly_cost = daily_cost * 365;
+    this.yearly_cost = parseFloat((daily_cost * 365).toFixed(2));
   }
 
   makeCalculations() {
