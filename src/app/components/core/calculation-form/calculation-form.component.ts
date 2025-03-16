@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { CalculationsListComponent } from '../calculations-list/calculations-list.component';
 import { CalculationsService } from '../../../services/calculations.service';
 import { InputTextModule } from 'primeng/inputtext';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-calculation-form',
@@ -22,6 +23,11 @@ import { InputTextModule } from 'primeng/inputtext';
   styleUrl: './calculation-form.component.css',
 })
 export class CalculationFormComponent {
+  constructor(
+    private logger: LoggerService,
+    private messageService: MessageService
+  ) {}
+
   calculationService = inject(CalculationsService);
 
   device_name: string = '';
@@ -85,16 +91,22 @@ export class CalculationFormComponent {
     this.calculationService.post(calculationData).subscribe({
       next: (response) => {
         console.log('Calculation saved successfully:', response);
-        alert('Calculations saved!');
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Sekmingai issaugota',
+          detail: 'Calculations issaugoti',
+        });
       },
       error: (error) => {
         console.error('Error saving calculation:', error);
-        alert('Failed to save calculations. Please try again.');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to save calculations',
+        });
       },
     });
   }
-
-  constructor(private logger: LoggerService) {}
 
   ngOnInit() {
     this.logger.info('Calculation-form component initialized');
